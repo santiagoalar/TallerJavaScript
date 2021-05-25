@@ -2,17 +2,17 @@
 function Electrodomestico(consumo, procedencia, tipo) {
   	this.consumo = consumo;
 	this.procedencia = procedencia;
-	this.tipo = tipo;
-	this.precioBase = 0;
+	this.precioBase = this.calcularPrecioBase();
 }
 
 Electrodomestico.prototype = {
 	calcularPrecioBase: function(){
-		var precioBase = aplicarConsumo(this.consumo) + aplicarProcedencia(this.procedencia);
-		//console.log(precioBase);
-  		return precioBase;
+		this.precioBase = aplicarConsumo(this.consumo) + aplicarProcedencia(this.procedencia);
+  		return this.precioBase;
+	},
+	getPrecioTotal: function(){
+		return this.precioBase;
 	}
-
 }
 
 function Televisores(consumo, procedencia, tamano, tieneTdt){
@@ -36,27 +36,7 @@ function aplicarConsumo(consumo){
 }
 
 function aplicarProcedencia(procedencia){
-	var precioProcedencia = 0;
-	precioProcedencia = (procedencia == "nacional")? 250000:350000;
-	return precioProcedencia;
+	return (procedencia == "nacional")? 250000:350000;
 }
 
 module.exports = Electrodomestico;
-
-	/*aplicarConsumo: function(){
-		var precioConsumo = 0;
-		if (this.consumo == "A") {
-			precioConsumo = 450000;
-		}else if(this.consumo == "B"){
-			precioConsumo = 350000;
-		}else if(this.consumo == "C"){
-			precioConsumo = 250000;
-		}
-		//console.log(precioConsumo)
-		return precioConsumo;
-	},
-	aplicarProcedencia: function(){
-		var precioProcedencia = 0;
-		precioProcedencia = (this.procedencia == "nacional")? 250000:350000;
-		//console.log(precioProcedencia);
-	}*/
