@@ -1,4 +1,4 @@
-//const Electrodomestico = require('./models/electro.js');
+const Electrodomestico = require('./models/electro.js');
 const Nevera = require('./models/nevera');
 const Televisor = require('./models/televisor.js');
 const Inventario = require('./crearInventario');

@@ -15,6 +15,9 @@ function facturacion(){
     const elect4 = new Electrodomestico("B", "nacional");
     const elect5 = new Electrodomestico("B", "nacional");
 
+    var valorTotal = 0;
+    var i = 1;
+
     datos.push(tele1);
     datos.push(neve1);
     datos.push(neve2);
@@ -26,10 +29,14 @@ function facturacion(){
     console.log(datos[1].tipo)
     console.log(datos.length)
 
-    console.log("tipo de elemento     tipo_consumo      procedencia      total")
+    console.log("Electro   tipo_consumo    procedencia    total")
     datos.forEach(element => {
-        console.log(element.tipo + "     " + element.consumo + "    " + element.procedencia + "   " + element.getPrecioTotal())
+        console.log(i + ". " + element.tipo + "     " + element.consumo + "    " + element.procedencia + "   " + element.getPrecioTotal())
+        valorTotal += element.getPrecioTotal();
+        i++;
     });
+
+    console.log("El valor total es: " + valorTotal)
 
 }
 
