@@ -1,8 +1,9 @@
 // My module
-function Electrodomestico(consumo, procedencia, tipo) {
+function Electrodomestico(consumo, procedencia) {
   	this.consumo = consumo;
 	this.procedencia = procedencia;
 	this.precioBase = this.calcularPrecioBase();
+	this.tipo = "Electro";
 }
 
 Electrodomestico.prototype = {

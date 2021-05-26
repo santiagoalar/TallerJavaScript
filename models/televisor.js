@@ -4,6 +4,7 @@ function Televisor(consumo, procedencia, tamano, tieneTdt){
 	Electrodomestico.call(this, consumo, procedencia);
 	this.tamano = tamano;
 	this.tieneTdt = tieneTdt;
+	this.tipo = "Televis"
 }
 
 Televisor.prototype = Object.create(Electrodomestico.prototype);
